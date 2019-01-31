@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Simple Ajax Search
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Simple Ajax Request Demo</h1>
+        <h3>Using plain javascript to make an ajax request containing a part of title for a book to a local node.js server <br /> and displaying the returned JSON object.</h3>
+    </header>
+    <div class="query">
+        
+        <h2 >Enter book name</h2>
+        <input type="text" id ="inp">
+        <h2 id= "result"></h2>
+
+    </div>
+    <script>
+            var s;
+            var inp= document.getElementById('inp');
+            var abc= document.getElementById('result');
+            inp.addEventListener("keyup",function(){
+                var ajaxObj= new XMLHttpRequest;
+                var tex= document.getElementById('inp').value;
+                ajaxObj.open('GET', '/ajax?inp='+tex,true);
+                ajaxObj.send();
+                ajaxObj.onreadystatechange=function(){
+                    if(ajaxObj.readyState==4 ){
+                        console.log(ajaxObj.responseText+ " "+ tex);
+                        s= "<ul class='resp'>"+ajaxObj.responseText+"</ul>"
+                        console.log(s);
+                    }
+                    
+                }
+                
+                abc.innerHTML=s; 
+            }
+
+        );
+    </script>
+</body>
+</html>

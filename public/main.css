@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+
+body{
+    background: rgb(240, 240, 240);
+
+}
+
+header{
+    width: 100%;
+    height: 70px;
+    background: rgb(29, 29, 29);
+    color: rgb(240, 240, 240);
+    padding: 20px;
+}
+
+header h1,h3{
+    font-weight: normal;
+
+}
+
+.query{
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.resp{
+    font-weight: normal;
+}
