@@ -8,6 +8,6 @@ Modules required : express,ejs.
 
 ## Description
 A simple demostration of AJAX request using plain javascript, can be extended to other APIs.
-### Des
+
 ## License
 Under GNU License.
